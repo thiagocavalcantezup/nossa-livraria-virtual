@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-LivrariaApplication<livraria>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "br.com.zup.edu.livraria.LivrariaApplication",
+      "projectName": "livraria",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
