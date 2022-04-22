@@ -27,7 +27,7 @@ public class ReservaLivroController {
                                               .orElseThrow(
                                                   () -> new ResponseStatusException(
                                                       HttpStatus.NOT_FOUND,
-                                                      "Não existe um exemplar cadastrado para este ISBN disponível."
+                                                      "Não existe um exemplar disponível para o ISBN fornecido."
                                                   )
                                               );
 
