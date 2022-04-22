@@ -38,7 +38,7 @@ public class DataLoader implements CommandLineRunner {
                     + "and with the help of his friends, he faces an attempted comeback by the "
                     + "dark wizard Lord Voldemort, who killed Harry's parents, but failed to kill "
                     + "Harry when he was just 15 months old.",
-            "J. K. Rowling", "978-0-7475-3269-9"
+            "J. K. Rowling", "9780747532699"
         );
 
         livroRepository.save(livro);

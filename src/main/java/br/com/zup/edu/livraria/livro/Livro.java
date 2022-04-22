@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.ISBN;
@@ -21,7 +22,8 @@ public class Livro {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "text")
+    @Lob
     private String resumo;
 
     @Column(nullable = false)

@@ -22,8 +22,8 @@ public class ReservaLivroController {
 
     @PatchMapping
     @Transactional
-    public ResponseEntity<?> reservar(@PathVariable String ISBN) {
-        Exemplar exemplar = exemplarRepository.findFirstByReservadoisFalseANDLivro_ISBNequals(ISBN)
+    public ResponseEntity<?> reservar(@PathVariable String isbn) {
+        Exemplar exemplar = exemplarRepository.findFirstByReservadoIsFalseAndLivro_Isbn(isbn)
                                               .orElseThrow(
                                                   () -> new ResponseStatusException(
                                                       HttpStatus.NOT_FOUND,
