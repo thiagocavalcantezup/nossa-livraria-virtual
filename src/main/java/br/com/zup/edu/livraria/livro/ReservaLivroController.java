@@ -1,9 +1,8 @@
 package br.com.zup.edu.livraria.livro;
 
-import static org.springframework.http.HttpStatus.NOT_FOUND;
-
 import javax.transaction.Transactional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,14 +26,12 @@ public class ReservaLivroController {
         Exemplar exemplar = exemplarRepository.findFirstByReservadoisFalseANDLivro_ISBNequals(ISBN)
                                               .orElseThrow(
                                                   () -> new ResponseStatusException(
-                                                      NOT_FOUND,
-                                                      "Não existe exemplar cadastrado para este ISBN"
+                                                      HttpStatus.NOT_FOUND,
+                                                      "Não existe um exemplar cadastrado para este ISBN disponível."
                                                   )
                                               );
 
         exemplar.reservar();
-
-        exemplarRepository.save(exemplar);
 
         return ResponseEntity.noContent().build();
     }

@@ -5,8 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.ISBN;
+import org.hibernate.validator.constraints.ISBN.Type;
 
 @Entity
+@Table(name = "livros")
 public class Livro {
 
     @Id
@@ -23,8 +28,8 @@ public class Livro {
     private String autor;
 
     @Column(nullable = false)
-    @org.hibernate.validator.constraints.ISBN(type = org.hibernate.validator.constraints.ISBN.Type.ANY)
-    private String ISBN;
+    @ISBN(type = Type.ANY)
+    private String isbn;
 
     /**
      * @deprecated Construtor de uso exclusivo do Hibernate
@@ -32,11 +37,11 @@ public class Livro {
     @Deprecated
     public Livro() {}
 
-    public Livro(String nome, String resumo, String autor, String ISBN) {
+    public Livro(String nome, String resumo, String autor, String isbn) {
         this.nome = nome;
         this.resumo = resumo;
         this.autor = autor;
-        this.ISBN = ISBN;
+        this.isbn = isbn;
     }
 
     public Long getId() {

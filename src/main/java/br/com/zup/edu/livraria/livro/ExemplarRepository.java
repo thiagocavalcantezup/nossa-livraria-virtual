@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ExemplarRepository extends JpaRepository<Exemplar, Long> {
 
-    Optional<Exemplar> findFirstByReservadoisFalseANDLivro_ISBNequals(String ISBN);
+    Optional<Exemplar> findFirstByReservadoisFalseANDLivro_ISBNequals(String isbn);
 
 }
